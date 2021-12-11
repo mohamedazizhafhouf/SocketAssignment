@@ -20,7 +20,10 @@ public class Server {
         PrintWriter outServer = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socClient.getOutputStream())), true);
 
         // todo: implement the scenario
-
+        String ch = inServer.readLine();
+        // deleting vowels :
+        String chf = ch.replaceAll("[aeiouyAEIOUY]","");
+        outServer.println(chf);
         // Close in / out
         inServer.close();
         outServer.close();
